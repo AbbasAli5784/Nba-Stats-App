@@ -1,38 +1,144 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header */
+.header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-bottom: 2px solid #ddd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header h1 {
+  font-size: 28px;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+}
+
+.nav .favourite-btn,
+.nav .alert-btn {
+  background-color: #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+  padding: 20px;
+}
+
+.image-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.placeholder {
+  background-color: #eaeaea;
+  width: 48%;
+  height: 200px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 14px;
+  color: #666;
+}
+
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-card {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.info-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.info-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Players List (API Data Page) */
+.players-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.player-card {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.player-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.player-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
   color: white;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+.footer h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
 }
