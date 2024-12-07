@@ -10,12 +10,10 @@ const Home = () => {
         <h1>NBA STAT TRACKER</h1>
         <h2>NBA</h2>
         <nav className="nav">
-          <Link to="/live-stats">Live Stats</Link>
-          <Link to="/player-profile">Player Profile</Link>
-          <Link to="/leaderboard">Leaderboard</Link>
-          <Link to="/game-results">Game Results</Link>
-          <Link to="/award-race">Award Race</Link>
-          <Link to="/box-score">Box Score</Link>
+          <Link to="/">Players</Link>
+          <Link to="/">Teams</Link>
+          <Link to="/">Games</Link>
+          <Link to="/">Standings</Link>
           <Link to="/api-data">Api Sample</Link>
           <button className="favorite-btn">Favorite</button>
           <button className="alert-btn">Alerts</button>
@@ -31,33 +29,27 @@ const Home = () => {
 
         <div className="info-section">
           <div className="info-card">
-            <Link to="/live-stats">
-              <h3>Live Stats</h3>
-              <p>Track real-time statistics for NBA games.</p>
-            </Link>
-          </div>
-          <div className="info-card">
             <Link to="/player-profile">
-              <h3>Player Profile</h3>
+              <h3>Players</h3>
               <p>Explore player stats, bios, and profiles.</p>
             </Link>
           </div>
-          
+
           <div className="info-card">
             <Link to="/leaderboard">
-              <h3>Leaderboard</h3>
-              <p>View rankings of top players in the league.</p>
+              <h3>Teams</h3>
+              <p>View stats of top teams in the league.</p>
             </Link>
           </div>
           <div className="info-card">
             <Link to="/game-results">
-              <h3>Game Results</h3>
+              <h3>Games</h3>
               <p>Find results and summaries of completed games.</p>
             </Link>
           </div>
           <div className="info-card">
             <Link to="/award-race">
-              <h3>Award Race</h3>
+              <h3>Standings</h3>
               <p>Check out the standings for major NBA awards.</p>
             </Link>
           </div>
