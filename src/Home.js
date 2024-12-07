@@ -10,9 +10,9 @@ const Home = () => {
         <h1>NBA STAT TRACKER</h1>
         <h2>NBA</h2>
         <nav className="nav">
-          <Link to="/">Players</Link>
+          <Link to="/players">Players</Link>
           <Link to="/">Teams</Link>
-          <Link to="/">Games</Link>
+          <Link to="/games">Games</Link>
           <Link to="/">Standings</Link>
           <Link to="/api-data">Api Sample</Link>
           <button className="favorite-btn">Favorite</button>

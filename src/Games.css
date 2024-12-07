@@ -1,0 +1,89 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #1d3557;
+}
+
+/* Game List Styling */
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Game Card Styling */
+.game-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Logos */
+.team-logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Info Styling */
+.team-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.team-info h2 {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: #1d3557;
+}
+
+.team-info span {
+  font-size: 1em;
+  font-weight: bold;
+  color: #457b9d;
+}
+
+/* Game Link */
+.game-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #457b9d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.game-link:hover {
+  background-color: #1d3557;
+}
