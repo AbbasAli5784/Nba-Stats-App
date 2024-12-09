@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Games from "./Games";
 import Players from "./Players";
+import Teams from "./Teams";
 
 import ApiData from "./ApiData";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/api-data" element={<ApiData />} />
           <Route path="/players" element={<Players />} />
+          <Route path="/teams" element={<Teams/>} />
         </Routes>
       </div>
     </Router>

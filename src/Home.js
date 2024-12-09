@@ -11,7 +11,7 @@ const Home = () => {
         <h2>NBA</h2>
         <nav className="nav">
           <Link to="/players">Players</Link>
-          <Link to="/">Teams</Link>
+          <Link to="/teams">Teams</Link>
           <Link to="/games">Games</Link>
           <Link to="/">Standings</Link>
           <Link to="/api-data">Api Sample</Link>
@@ -36,7 +36,7 @@ const Home = () => {
           </div>
 
           <div className="info-card">
-            <Link to="/leaderboard">
+            <Link to="/teams">
               <h3>Teams</h3>
               <p>View stats of top teams in the league.</p>
             </Link>
