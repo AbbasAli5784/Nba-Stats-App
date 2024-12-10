@@ -1,35 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css"; // Add styles to match the wireframe
+import "./Home.css";
+import logo from "./nba.png";
+import banner1 from "./banner1.jpg";
+import banner2 from "./banner2.jpg";
 
 const Home = () => {
   return (
     <div className="home">
-      {/* Header */}
       <header className="header">
-        <h1>NBA STAT TRACKER</h1>
-        <h2>NBA</h2>
+        <div className="header-logo-container">
+          <h1>NBA STAT TRACKER</h1>
+          <img src={logo} alt="NBA Logo" className="nba-logo" />
+        </div>
         <nav className="nav">
           <Link to="/players">Players</Link>
           <Link to="/teams">Teams</Link>
           <Link to="/games">Games</Link>
           <Link to="/standings">Standings</Link>
-          <Link to="/api-data">Api Sample</Link>
-          <button className="favorite-btn">Favorite</button>
-          <button className="alert-btn">Alerts</button>
         </nav>
       </header>
 
-      {/* Main Content */}
       <main>
         <div className="image-section">
-          <div className="placeholder">Image Placeholder 1</div>
-          <div className="placeholder">Image Placeholder 2</div>
+          <div className="image-container">
+            <img src={banner1} alt="NBA Action" className="image-placeholder" />
+          </div>
+          <div className="image-container">
+            <img src={banner2} alt="NBA Stars" className="image-placeholder" />
+          </div>
         </div>
 
         <div className="info-section">
           <div className="info-card">
-            <Link to="/player-profile">
+            <Link to="/players">
               <h3>Players</h3>
               <p>Explore player stats, bios, and profiles.</p>
             </Link>
@@ -42,51 +46,64 @@ const Home = () => {
             </Link>
           </div>
           <div className="info-card">
-            <Link to="/game-results">
+            <Link to="/games">
               <h3>Games</h3>
               <p>Find results and summaries of completed games.</p>
             </Link>
           </div>
           <div className="info-card">
-            <Link to="/stsndings">
+            <Link to="/standings">
               <h3>Standings</h3>
               <p>Check out the standings for the whole league.</p>
-            </Link>
-          </div>
-          <div className="info-card">
-            <Link to="/box-score">
-              <h3>Box Score</h3>
-              <p>Get detailed game statistics for all players.</p>
             </Link>
           </div>
         </div>
       </main>
 
-      {/* Footer */}
       <footer>
         <div className="footer-column">
           <h4>Social Links</h4>
-          <p>Instagram</p>
-          <p>YouTube</p>
-          <p>LinkedIn</p>
+          <div className="social-links">
+            <a
+              href="https://www.instagram.com/nba/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/user/NBA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://x.com/NBA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
+          </div>
         </div>
         <div className="footer-column">
-          <h4>Today's Live</h4>
-          <p>Game 1</p>
-          <p>Game 2</p>
-          <p>Game 3</p>
+          <h4>Today's Live Games</h4>
+          <p>Magic vs Bucks</p>
+          <p>Warriors vs Rockets</p>
+          <p>Hawks vs Knicks</p>
         </div>
         <div className="footer-column">
           <h4>MVP Race</h4>
-          <p>LeBron James</p>
-          <p>Jamal Murray</p>
-          <p>LaMelo Ball</p>
+          <p>Nikola Jokic</p>
+          <p>Shai Gilgeous-Alexander</p>
+          <p>Jason Tatum</p>
         </div>
         <div className="footer-column">
           <h4>League Leaders</h4>
           <p>Russell Westbrook</p>
           <p>Chris Paul</p>
-          <p>Bronny James</p>
+          <p>Jason Tatum</p>
         </div>
       </footer>
     </div>

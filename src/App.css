@@ -1,4 +1,3 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,11 +9,13 @@ body {
   text-align: center;
 }
 
-/* Header */
 .header {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-bottom: 2px solid #ddd;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h1 {
@@ -50,7 +51,6 @@ body {
   cursor: pointer;
 }
 
-/* Main Content */
 .main-content {
   padding: 20px;
 }
@@ -97,7 +97,6 @@ body {
   font-size: 14px;
 }
 
-/* Players List (API Data Page) */
 .players-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -123,7 +122,6 @@ body {
   font-size: 14px;
 }
 
-/* Footer */
 .footer {
   background-color: #333;
   color: white;
@@ -192,4 +190,21 @@ h3 {
   margin-top: 20px;
   font-size: 1.5rem;
   color: #333;
+}
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #1da1f2;
 }

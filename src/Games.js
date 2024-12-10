@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import "./Games.css";
-
+import { Link } from "react-router-dom";
+import logo from "./nba.png";
 const Games = () => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,13 +22,13 @@ const Games = () => {
             params: { season: "2024" },
             headers: {
               "X-RapidAPI-Key":
-                "2050522d5bmshdec83e2910daa6dp1424a0jsn3bd670c71775", // Replace with your API key
+                "2050522d5bmshdec83e2910daa6dp1424a0jsn3bd670c71775",
               "X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
             },
           }
         );
 
-        const today = moment().format("YYYY-MM-DD"); // Today's date in format: YYYY-MM-DD
+        const today = moment().format("YYYY-MM-DD");
         const todayGames = response.data.response.filter((game) =>
           moment(game.date.start).isSame(today, "day")
         );
@@ -50,6 +51,19 @@ const Games = () => {
 
   return (
     <div>
+      <header className="header">
+        <div className="header-logo-container">
+          <h1>NBA STAT TRACKER</h1>
+          <img src={logo} alt="NBA Logo" className="nba-logo" />
+        </div>
+        <nav className="nav">
+          <Link to="/">Home</Link>
+          <Link to="/players">Players</Link>
+          <Link to="/teams">Teams</Link>
+          <Link to="/games">Games</Link>
+          <Link to="/standings">Standings</Link>
+        </nav>
+      </header>
       <h1>NBA Games for Today</h1>
       <ul className="games-list">
         {games.map((game) => (
@@ -98,6 +112,53 @@ const Games = () => {
           </li>
         ))}
       </ul>
+      <footer>
+        <div className="footer-column">
+          <h4>Social Links</h4>
+
+          <div className="social-links">
+            <a
+              href="https://www.instagram.com/nba/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/user/NBA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://x.com/NBA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
+        <div className="footer-column">
+          <h4>Today's Live Games</h4>
+          <p>Magic vs Bucks</p>
+          <p>Warriors vs Rockets</p>
+          <p>Hawks vs Knicks</p>
+        </div>
+        <div className="footer-column">
+          <h4>MVP Race</h4>
+          <p>Nikola Jokic</p>
+          <p>Shai Gilgeous-Alexander</p>
+          <p>Jason Tatum</p>
+        </div>
+        <div className="footer-column">
+          <h4>League Leaders</h4>
+          <p>Russell Westbrook</p>
+          <p>Chris Paul</p>
+          <p>Jason Tatum</p>
+        </div>
+      </footer>
     </div>
   );
 };
