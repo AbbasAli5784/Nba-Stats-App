@@ -26,8 +26,14 @@ const Standings = () => {
         );
 
         const data = response.data.response;
-        setStandings(data);
-        console.log("API Data", data);
+
+        const standingsWithWinPercentage = data.map((team) => ({
+          ...team,
+          winPercentage: team.win.total / (team.win.total + team.loss.total),
+        }));
+
+        setStandings(standingsWithWinPercentage);
+        console.log("API Data", standingsWithWinPercentage);
       } catch (error) {
         console.error("Error fetching standings data:", error);
       }
@@ -36,19 +42,20 @@ const Standings = () => {
     fetchStandingsData();
   }, []);
 
-  const easternStandings = standings.filter(
-    (team) => team.conference.name === "east"
-  );
-  const westernStandings = standings.filter(
-    (team) => team.conference.name === "west"
-  );
-
   const isValidImage = (url) => {
     return (
       url &&
       (url.endsWith(".png") || url.endsWith(".jpg") || url.endsWith(".jpeg"))
     );
   };
+
+  const easternStandings = standings
+    .filter((team) => team.conference.name === "east")
+    .sort((a, b) => b.winPercentage - a.winPercentage);
+
+  const westernStandings = standings
+    .filter((team) => team.conference.name === "west")
+    .sort((a, b) => b.winPercentage - a.winPercentage);
 
   return (
     <div>
@@ -67,7 +74,6 @@ const Standings = () => {
       </header>
       <h2>NBA Standings</h2>
 
-      {/* Eastern Conference */}
       <h3>Eastern Conference</h3>
       <div className="standings-grid">
         {easternStandings.map((team, index) => (
@@ -85,12 +91,12 @@ const Standings = () => {
               </strong>
               <p>Wins: {team.win.total}</p>
               <p>Losses: {team.loss.total}</p>
+              <p>Win Percentage: {(team.winPercentage * 100).toFixed(2)}%</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Western Conference */}
       <h3>Western Conference</h3>
       <div className="standings-grid">
         {westernStandings.map((team, index) => (
@@ -108,6 +114,7 @@ const Standings = () => {
               </strong>
               <p>Wins: {team.win.total}</p>
               <p>Losses: {team.loss.total}</p>
+              <p>Win Percentage: {(team.winPercentage * 100).toFixed(2)}%</p>
             </div>
           </div>
         ))}
