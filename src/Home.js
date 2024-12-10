@@ -13,7 +13,7 @@ const Home = () => {
           <Link to="/players">Players</Link>
           <Link to="/teams">Teams</Link>
           <Link to="/games">Games</Link>
-          <Link to="/">Standings</Link>
+          <Link to="/standings">Standings</Link>
           <Link to="/api-data">Api Sample</Link>
           <button className="favorite-btn">Favorite</button>
           <button className="alert-btn">Alerts</button>
@@ -48,9 +48,9 @@ const Home = () => {
             </Link>
           </div>
           <div className="info-card">
-            <Link to="/award-race">
+            <Link to="/stsndings">
               <h3>Standings</h3>
-              <p>Check out the standings for major NBA awards.</p>
+              <p>Check out the standings for the whole league.</p>
             </Link>
           </div>
           <div className="info-card">

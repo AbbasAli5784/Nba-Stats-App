@@ -6,6 +6,7 @@ import Home from "./Home";
 import Games from "./Games";
 import Players from "./Players";
 import Teams from "./Teams";
+import Standings from "./Standings";
 
 import ApiData from "./ApiData";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/api-data" element={<ApiData />} />
           <Route path="/players" element={<Players />} />
           <Route path="/teams" element={<Teams/>} />
+          <Route path="/standings" element={<Standings/>} />
         </Routes>
       </div>
     </Router>
